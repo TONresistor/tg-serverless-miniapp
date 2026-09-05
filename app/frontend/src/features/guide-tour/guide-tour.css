@@ -1,0 +1,115 @@
+.guide-tour {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  pointer-events: auto;
+}
+
+.guide-tour__spotlight {
+  position: fixed;
+  border: 2px solid color-mix(in srgb, var(--link) 82%, white);
+  border-radius: 16px;
+  background: transparent;
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.58);
+  pointer-events: none;
+  transition:
+    left 0.18s cubic-bezier(0.2, 0.8, 0.2, 1),
+    top 0.18s cubic-bezier(0.2, 0.8, 0.2, 1),
+    width 0.18s cubic-bezier(0.2, 0.8, 0.2, 1),
+    height 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.guide-tour__popover {
+  position: fixed;
+  padding: 16px;
+  border: 0.5px solid var(--separator);
+  border-radius: 20px;
+  color: var(--text);
+  background: var(--section-bg);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.28);
+}
+
+.guide-tour__popover::before {
+  content: '';
+  position: absolute;
+  left: var(--guide-tour-arrow-left);
+  width: 15px;
+  height: 15px;
+  background: var(--section-bg);
+  border: solid var(--separator);
+  transform: translateX(-50%) rotate(45deg);
+}
+.guide-tour__popover--below::before {
+  top: -8px;
+  border-width: 0.5px 0 0 0.5px;
+}
+.guide-tour__popover--above::before {
+  bottom: -8px;
+  border-width: 0 0.5px 0.5px 0;
+}
+
+.guide-tour__content {
+  animation: guide-tour-content-in 0.12s ease-out;
+}
+@keyframes guide-tour-content-in {
+  from { opacity: 0.86; }
+  to { opacity: 1; }
+}
+
+.guide-tour__top,
+.guide-tour__actions {
+  display: flex;
+  align-items: center;
+}
+.guide-tour__top { justify-content: space-between; }
+.guide-tour__progress { display: flex; gap: 5px; }
+.guide-tour__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--hint) 35%, transparent);
+}
+.guide-tour__dot--active {
+  width: 16px;
+  background: var(--link);
+}
+.guide-tour__skip,
+.guide-tour__back {
+  color: var(--hint);
+  font-size: 14px;
+  font-weight: 600;
+}
+.guide-tour__popover h2 {
+  margin: 14px 0 5px;
+  font-size: 20px;
+  line-height: 1.2;
+}
+.guide-tour__popover p {
+  margin: 0;
+  color: var(--subtitle);
+  font-size: 15px;
+  line-height: 1.4;
+}
+.guide-tour__actions {
+  justify-content: flex-end;
+  gap: 14px;
+  margin-top: 16px;
+}
+.guide-tour__next {
+  min-width: 88px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  color: var(--accent-text);
+  background: var(--accent);
+  font-size: 15px;
+  font-weight: 700;
+}
+.guide-tour__back { margin-right: auto; }
+.guide-tour__skip:active,
+.guide-tour__back:active,
+.guide-tour__next:active { opacity: 0.65; }
+
+@media (prefers-reduced-motion: reduce) {
+  .guide-tour__spotlight { transition: none; }
+  .guide-tour__content { animation: none; }
+}

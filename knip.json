@@ -1,0 +1,29 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "workspaces": {
+    ".": {
+      "entry": [
+        "scripts/*.js",
+        "test/**/*.test.js",
+        "tgcloud/schema.js",
+        "tgcloud/endpoints/*.js",
+        "tgcloud/handlers/*.js",
+        "tgcloud/lib/database/setup.js",
+        "tgcloud/lib/database/status.js",
+        "tgcloud/lib/notifications/resume.js",
+        "*.config.js"
+      ],
+      "project": [
+        "scripts/**/*.js",
+        "test/**/*.js",
+        "tgcloud/**/*.js",
+        "*.config.js"
+      ]
+    },
+    "app/frontend": {
+      "entry": ["test/*.test.ts"],
+      "project": ["src/**/*.{ts,tsx}", "test/*.ts"]
+    }
+  },
+  "ignoreDependencies": ["sdk"]
+}

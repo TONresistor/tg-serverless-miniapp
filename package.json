@@ -1,0 +1,32 @@
+{
+  "name": "mtonga-serverless",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0",
+    "pnpm": "10.28.1"
+  },
+  "scripts": {
+    "test": "node --experimental-sqlite --import ./test/serverless/register.js --test test/serverless/*.test.js test/tooling/*.test.js",
+    "check": "node scripts/check-serverless.js",
+    "build": "pnpm --dir app/frontend build",
+    "deploy": "node scripts/deploy-serverless.js",
+    "verify:cloud": "node scripts/verify-serverless.js",
+    "lint": "eslint app/frontend/src app/frontend/test app/frontend/vite.config.ts tgcloud scripts test *.config.js",
+    "format": "prettier --write \"{app/frontend/src,app/frontend/test,tgcloud,scripts,test}/**/*.{ts,tsx,js}\" \"*.config.js\" package.json app/frontend/package.json knip.json",
+    "format:check": "prettier --check \"{app/frontend/src,app/frontend/test,tgcloud,scripts,test}/**/*.{ts,tsx,js}\" \"*.config.js\" package.json app/frontend/package.json knip.json",
+    "check:unused": "knip --max-issues 0"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@tgcloud/cli": "0.2.0",
+    "acorn": "8.15.0",
+    "eslint": "10.12.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "globals": "17.13.0",
+    "knip": "6.40.0",
+    "prettier": "3.6.2",
+    "typescript-eslint": "8.71.1"
+  }
+}

@@ -1,0 +1,18 @@
+.screen {
+  height: var(--app-viewport-height);
+  overflow-y: auto;
+  padding-top: calc(
+    var(--tg-safe-area-inset-top, env(safe-area-inset-top, 0px)) +
+    var(--tg-content-safe-area-inset-top, 0px) + 8px
+  );
+  padding-bottom: calc(
+    80px + max(var(--tg-safe-area-inset-bottom, env(safe-area-inset-bottom, 0px)), 12px)
+  );
+}
+
+.screen__body {
+  padding: 12px var(--app-page-inset) 24px;
+  max-width: var(--app-content-width);
+  margin: 0 auto;
+}
+.screen[hidden] { display: none; }

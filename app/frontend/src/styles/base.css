@@ -1,0 +1,108 @@
+@font-face {
+  font-family: 'Roboto MTONGA';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../assets/Roboto-Variable-Latin.woff2') format('woff2');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', system-ui,
+    sans-serif;
+  font-size: 17px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.centered {
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.card {
+  background: var(--section-bg);
+  border-radius: 14px;
+  padding: 1.5rem;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+}
+
+.muted {
+  color: var(--hint);
+  margin: 0.25rem 0;
+}
+
+.error {
+  color: var(--destructive);
+}
+
+.avatar--fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: var(--accent-text);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+.profile-avatar.avatar--fallback {
+  font-size: 48px;
+}
+
+.telegram-icon {
+  display: inline-block;
+  width: var(--telegram-icon-size);
+  height: var(--telegram-icon-size);
+  overflow: hidden;
+  flex: 0 0 auto;
+  line-height: 0;
+  vertical-align: middle;
+}
+.telegram-icon svg {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+.telegram-icon svg [fill]:not([fill='none']) {
+  fill: currentColor !important;
+}
+.telegram-icon svg [stroke]:not([stroke='none']) {
+  stroke: currentColor !important;
+}

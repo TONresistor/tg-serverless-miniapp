@@ -1,0 +1,32 @@
+{
+  "name": "tonofdevs-miniapp",
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@10.28.1",
+  "engines": {
+    "node": ">=22",
+    "pnpm": "10.28.1"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "test": "tsc -p tsconfig.test.json && tsx --test test/*.test.ts",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lottie-web": "^5.13.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tsx": "^4.22.4",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7"
+  }
+}

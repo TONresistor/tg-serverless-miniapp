@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>MTONGA</title>
+    <!-- Warm the connection to Telegram's CDN before the SDK request fires. -->
+    <link rel="preconnect" href="https://telegram.org" crossorigin />
+    <!-- Telegram WebApp SDK. `defer` keeps it off the render-critical path (the
+         parser no longer stalls on its download) while still guaranteeing it runs
+         before the app module — deferred scripts execute in document order, and
+         this tag precedes Vite's injected module script, so window.Telegram.WebApp
+         is ready when main.tsx runs. -->
+    <script defer src="https://telegram.org/js/telegram-web-app.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
